@@ -1,10 +1,10 @@
 # lumied-saas
 
-Plugin Claude Code para o ecossistema **Lumied / Construfare** — 26 skills + 1 agente, cobrindo compliance, deploy, UI/UX, scaffold e runbooks operacionais.
+Plugin Claude Code para o ecossistema **Lumied / Construfare** — 34 skills + 1 agente, cobrindo compliance, deploy, UI/UX, performance, scaffold e runbooks operacionais.
 
 ## O que está aqui
 
-### Skills (26)
+### Skills (34)
 
 #### Compliance & isolamento de tenant (6)
 - `tenant-audit` — detecta queries sem filtro `escola_id`/`tenant_id`
@@ -21,11 +21,21 @@ Plugin Claude Code para o ecossistema **Lumied / Construfare** — 26 skills + 1
 - `cron-health` — diagnóstico pg_cron
 - `migration-rollback` — down migration antes de aplicar a up
 
-#### UI / UX (4)
+#### UI / UX (8)
 - `ui-lumied-style` — design system
 - `mobile-audit` — uso em celular (família/aluno acessa do mobile)
 - `a11y-quick` — acessibilidade mínima
 - `loading-states` — feedback visual em async
+- `table-ux` — padrão de tabela (busca, filtro, ordem, paginação, mobile fallback)
+- `empty-states` — first-time / filtered / permission / error empty
+- `microcopy-ptbr` — tom/voz PT-BR, mensagens de erro humanizadas, formato BR
+- `print-layout` — A4, margens, page-break, tinta econômica (boletos, espelhos, diplomas)
+
+#### Performance & qualidade de código (4)
+- `db-index-audit` — índices em tabelas grandes (mitiga IO Supabase)
+- `n-plus-one` — query em loop em edge functions
+- `idempotency-check` — webhooks/jobs idempotentes (banco, import, reconcile)
+- `zod-schemas` — validação de body/params em edge functions
 
 #### Scaffold (3)
 - `bank-adapter-template` — novo adapter de banco brasileiro
@@ -39,7 +49,7 @@ Plugin Claude Code para o ecossistema **Lumied / Construfare** — 26 skills + 1
 - `chrome-extension-pack` — empacotar extensão no Windows
 - `cost-audit` — caps Free Tier cruzados
 
-#### Review & qualidade (3)
+#### Review & processo (3)
 - `pr-review-lumied` — review combinado consolidado
 - `test-coverage` — tiers de prioridade pra Onda 2 refator
 - `postmortem` — template guiado de incidente
@@ -59,32 +69,22 @@ As skills aqui foram criadas a partir de incidentes reais, padrões repetidos e 
 
 ## Instalação
 
-### Como marketplace local (desenvolvimento)
-
 ```bash
-# No repositório do plugin (este diretório)
-claude
-> /plugin marketplace add /caminho/local/para/lumied-claude-plugin
-> /plugin install lumied-saas
-```
-
-### Como marketplace GitHub (depois de publicar)
-
-```bash
-claude
-> /plugin marketplace add ivyson/lumied-claude-plugin
-> /plugin install lumied-saas@lumied-marketplace
+claude plugin marketplace add ivyson-wq/lumied-claude-plugin
+claude plugin install lumied-saas@lumied-claude-plugin
 ```
 
 ### Manual (sem marketplace)
 
-As skills/agente são arquivos comuns — pode copiar `skills/*` para `~/.claude/skills/` e `agents/*.md` para `~/.claude/agents/` em qualquer máquina.
+As skills/agente são arquivos comuns — pode copiar `plugins/lumied-saas/skills/*` para `~/.claude/skills/` e `plugins/lumied-saas/agents/*.md` para `~/.claude/agents/` em qualquer máquina.
 
 ## Versionamento
 
-- `0.1.0` — release inicial com 26 skills + 1 agente.
-- Roadmap: `reconcile-check`, `incident-runbook`, `escola-deactivation`, comandos slash de orquestração.
+- `0.2.0` (2026-05-14) — +8 skills: 4 UI/UX (table-ux, empty-states, microcopy-ptbr, print-layout) + 4 performance (db-index-audit, n-plus-one, idempotency-check, zod-schemas).
+- `0.1.0` (2026-05-14) — release inicial com 26 skills + 1 agente.
+
+Roadmap: `reconcile-check`, `incident-runbook`, `escola-deactivation`, comandos slash de orquestração.
 
 ## Licença
 
-Uso interno. Decisão de open-source futura pendente.
+Apache-2.0.

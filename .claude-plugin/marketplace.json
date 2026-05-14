@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "lumied-saas",
-      "description": "26 skills (compliance, deploy, UI, scaffold, runbooks) + agente de bug triage para Lumied/Construfare.",
+      "description": "34 skills (compliance, deploy, UI/UX, performance, scaffold, runbooks) + agente de bug triage para Lumied/Construfare.",
       "author": {
         "name": "Ivyson Longoni",
         "email": "ivyson@gmail.com"
