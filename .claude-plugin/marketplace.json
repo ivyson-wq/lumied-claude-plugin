@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "lumied-claude-plugin",
+  "description": "Marketplace de plugins Claude Code para o ecossistema Lumied/Construfare — SaaS multi-tenant para escolas. Foco em compliance (tenant isolation, RLS), deploy operacional, UI/UX consistente e runbooks de migração/homologação.",
+  "owner": {
+    "name": "Ivyson Longoni",
+    "email": "ivyson@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "lumied-saas",
+      "description": "26 skills (compliance, deploy, UI, scaffold, runbooks) + agente de bug triage para Lumied/Construfare.",
+      "author": {
+        "name": "Ivyson Longoni",
+        "email": "ivyson@gmail.com"
+      },
+      "category": "development",
+      "source": "./plugins/lumied-saas",
+      "homepage": "https://github.com/ivyson-wq/lumied-claude-plugin"
+    }
+  ]
+}
