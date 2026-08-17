@@ -1,7 +1,7 @@
 {
   "name": "lumied-saas",
-  "description": "Plugin Claude Code para o ecossistema Lumied/Construfare — 34 skills (compliance, deploy, UI/UX, performance, scaffold, runbooks) + agente de bug triage. Materializa as memórias project_*/feedback_* em ferramentas executáveis no fluxo de PR review, deploy e onboarding de escolas.",
-  "version": "0.2.0",
+  "description": "Plugin Claude Code para o ecossistema Lumied/Construfare — 35 skills (compliance, deploy, UI/UX, performance, scaffold, runbooks) + agente de bug triage. Materializa as memórias project_*/feedback_* em ferramentas executáveis no fluxo de PR review, deploy e onboarding de escolas.",
+  "version": "0.2.1",
   "author": {
     "name": "Ivyson Longoni",
     "email": "ivyson@gmail.com"
